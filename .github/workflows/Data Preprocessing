@@ -1,0 +1,15 @@
+# Use the 'Close' price for prediction
+data = data[['Close']]
+
+# Add additional features like moving averages, e.g., 50-day moving average
+data['50_MA'] = data['Close'].rolling(window=50).mean()
+
+# Remove rows with missing values
+data.dropna(inplace=True)
+
+# Visualize the stock price and moving average
+plt.figure(figsize=(12,6))
+plt.plot(data['Close'], label='Close Price')
+plt.plot(data['50_MA'], label='50-Day Moving Average', linestyle='--')
+plt.legend()
+plt.show()
