@@ -1,0 +1,13 @@
+# Make predictions
+y_pred = model.predict(X_test)
+
+# Calculate Mean Squared Error
+mse = mean_squared_error(y_test, y_pred)
+print(f'Mean Squared Error: {mse}')
+
+# Plot predicted vs actual prices
+plt.figure(figsize=(12,6))
+plt.plot(y_test.index, y_test, label='Actual Prices')
+plt.plot(y_test.index, y_pred, label='Predicted Prices', linestyle='--')
+plt.legend()
+plt.show()
