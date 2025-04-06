@@ -1,0 +1,6 @@
+# Fetch data for a specific stock (e.g., Apple Inc. - AAPL)
+stock_symbol = 'AAPL'
+data = yf.download(stock_symbol, start='2010-01-01', end='2025-01-01')
+
+# Display the first few rows of data
+print(data.head())
